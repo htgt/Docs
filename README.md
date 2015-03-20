@@ -1,2 +1,2 @@
 # Docs
-Documents, Presentations explaining things about LIMS2 and HTGT.
+Documents and Presentations explaining things about LIMS2 and HTGT.
