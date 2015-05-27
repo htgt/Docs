@@ -1,0 +1,71 @@
+<html>
+<head>
+  <title>Mutatant Sequence Creation</title>
+  <basefont face="Tahoma" size="2" />
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+  <meta name="exporter-version" content="Evernote Windows/275519; Windows/6.1.7601 Service Pack 1;"/>
+  <style>
+    body, td {
+      font-family: Tahoma;
+      font-size: 10pt;
+    }
+  </style>
+</head>
+<body>
+<a name="618"/>
+<h1>Mutatant Sequence Creation</h1>
+
+<div>
+<span><div>Helping to write new util module that will create the following mutatant sequences:</div>
+<div><br clear="none"/></div>
+<div>
+<ul><li>Allele</li><li>Targetting Vector</li><li>Intermediate Vector</li></ul>
+<p><strong> </strong></p>
+<hr/>
+<strong> Outline</strong> 
+<ul><li>Will replace the current dave jackson code</li><li>Writing from scratch, not trying to reverse engineer the old code.</li><li>Need to talk to Barry to understand process and what sequences need to be inserted where.</li><li>Ray has already layed down some code for the Intermediate Vector creation.</li></ul>
+<p><strong> </strong></p>
+<hr/>
+<strong> Barry Meeting</strong>
+<p>Need to find out from Barry the precise sequences and junction points for each of the steps:</p>
+<ol><li>Wildtype to Intermediate Vector</li><li>Intermediate Vector to Targeting Vector</li><li>Targeting Vector to ES Cell / Allele</li></ol>
+<p>We have 2 sequences and 4 junction points and homologous recombination.</p>
+<p>This can output 2 seperate products, only one of which we are interested in, Dave Jacksons code actually outputs both the products?</p>
+<p>Factors effecting sequence:</p>
+<ul><li>Targeted trap</li><li>Design type (e.g. Insertion / Deletion etc)</li><li>cassette type</li><li>backbone type</li></ul>
+<p> </p>
+<p>Find out Meaning:</p>
+<ol><li>Gateway?</li><li>How Insertion designs work</li><li>How deletion designs work</li></ol>
+<p> </p>
+<hr/>
+ <strong>Design Notes</strong> 
+<ul><li>Floxed exon = flanked by loxp sites</li><li>loxp not directly on boundary of intron / exon</li><li>For the positive selection of stably trans-fected ES cell clones, a neomycin resistance (neo) gene, flanked by FRT recognition sites for FLP recombinase, must be included intothe vector next to one of the loxP sites (Fig. 4).</li></ul>
+<ul><li>﻿Knockout first - tm1a (can produce conditional knockouts as well as reporter knockouts and null alleles)</li><li>promter driven knockout - has 3 loxp</li><li>promterless has 2 loxp</li></ul>
+<ul><li>Targetted - tm1e (non conditional)</li><li>promoter driven - 2 loxp</li><li>promoterless - 1 loxp</li></ul>
+<p>Promoterless cassettes have a limitation in that they can be applied only to genes that are expressed in ES cells.</p>
+<ul><li>NeoR (neomycine / kanomycine resistance),  a successful intergration of the cassette will confer the resistance to the cell.</li><li>lacZ (β-galactosidase) is a reporter gene, easily located when inserted into cells because it stains blue when β-galactosidase is added</li><li>en-2 (engrail 2) is a splice acceptor site</li><li>IRES - Internal ribosomal entry site</li><li>sv40 - polypadenelyation signal </li><li>sA - splice acceptor (this plus the polyadenelyation signal produce a knockout at the RNA processing level by trapping and truncating transcripts, the lacz pluc neor between these 2 sites means they are translated into protiens and used for selection and expression reporting)</li></ul>
+<ul><li>loxp - cre recombination target</li><li>FRT - FLP recomdiation target</li><li>Cre and FLP are site specific DNA recombinases, in this case the the cre is used to excise loxp flanked sequence leaving behind one loxp.(loxp both point in same orientation on a linear DNA)</li></ul>
+<p><strong> </strong></p>
+<hr/>
+<strong> Process</strong>
+<p>A strain of mice harbouring the loxp flanked gene (floxed) are bred with Cre transgenic strain of mice. These Cre mice express Cre is specific location of their body.</p>
+<p>The resulting offspring will have the floxed exon deleted in the regions of the mice where cre is expressed.</p>
+<p>However in these standard cre transgenic mice the recombinase expression (and therefore the gene inactivation) depends on the development activity of the chosen promoter region and cannot be experimentally manipulated. </p>
+<p><strong> </strong></p>
+<hr/>
+<strong> EUCOMM/KOMP</strong>
+<p>Beside the floxed critical exon, an EUCOMM/KOMP tar-geting vector contains 5′ and 3′ homology arms that mediatehomologous recombination, and a central targeting cassette thatdisrupts gene function and reports gene expression by a lacZreporter. Two versions of targeting cassettes are in use: promoter-less and promoter-driven.</p>
+<p><strong>Promoterless:</strong> Used for targeting of genes that are expressed in ES cells at sufficient levels. It useses the promoter of the targeted gene to drive the expression of the neo resistance.</p>
+<p><strong>Promoter:</strong> Most targeting vectors have a cassette with a new resistance that is driven by a B-actin promoter. This allows the targeting of all genes irrespective of their expression status in the mouse ES cells.</p>
+<p>The alleles generated after targeting with the conditional vector are knock-out first alleles, meaning in the first version of the allele, gene function is inactivated by splicing of upstream exons to a splice acceptor in the targeting cassette. To make this allele into a conditional version the targeting cassete has to be removed by Flp recombinase. This will leave behind loxP sites flanking the critical exon. (done by breeding to a FLP mouse).</p>
+<p>The vectors that are generated by the EUCOMM/KOMP programs can also be used by researchers to assemble vectors with other targeting cassettes. For this purpose, the intermediate versions of the targeting vector can be obtained, and a targeting cassette of choice (e.g., a GFP or Cre cassette) can be inserted by Gateway cloning.</p>
+<p>..</p>
+<p>The clones labelled as &quot;Knockout first&quot; are expected to contain all the loxP sites as shown in the allele map. The knockout is obtained by introduction of a splice acceptor/reporter- cassette with a strong polyA site into an endogenous intron upstream of a critical exon. Should this allele be exposed to Flpase it is expected to revert to expressing wild type protein; upon subsequent exposure to Cre recombinase the critical exon is expected to be deleted.<br clear="none"/><br clear="none"/>For clones labelled &quot;Targeted, non-conditional&quot; the 3' loxP site has not been verified. Targeted non-conditional clones arise from the failure of the 3' loxP site to be incorporated along with the reporter/selection cassette during the process of homologous recombination in ES cells. Targeted non-conditionals mutate genes the same way as unmodified knockout first alleles but cannot be converted into conditional alleles.</p>
+<p><strong>Gene Trapping</strong> (not targeted trap): In addition to the above method there also has been generated a library of conditionally mutated ES cells by gene trapping. Uses a different cassete (FlipROSABGeo) and utilises the Flex principle.</p>
+<p>The two pairs of heterotypic recombination sites for Cre and FLP and positioned in inverted orientation around the gene trap cassette. This allows inverting the cassette two times. The first inversion by Flp silences the mutation and creates a conditional allele. The second inversion by Cre reinstates the mutation.</p>
+<p><strong>Targeted Trap:</strong> These differ from the intended conditional frameshift products in that the LoxP site within the 3' homology arm has not been confirmed and is likely to be missing (this seems to occur with some regularity with certain promoters). These are still potentially useful products if a conditional knockout is not required.</p>
+<p>In the GenBank files the wildtype sequence is always shown between the D5 and D3 for <strong>targeted trap </strong>designs because we cannot prove that the loxp has been inserted. For knockout first conditional designs the sequence between the D5 and D3 is the loxp sequence and is marked as such in the GenBank files.</p>
+</div>
+<div><br clear="none"/><br clear="none"/></div>
+<div><br clear="none"/><img src="Mutatant Sequence Creation_files/Targeting.png" type="image/png" height="767" width="672"/></div></span>
+</div></body></html> 
